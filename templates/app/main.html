@@ -13,8 +13,6 @@
 <body>
 <form method="post">
     {% csrf_token %}
-    <h3>Your step</h3>
-    <h2>{{ step|default:"0" }}/25</h2>
     {% for i in range %}
         <div>
             {% for j in range %}
