@@ -1,0 +1,9 @@
+.one_place {
+    display: inline-block;
+    width: 8vw;
+    height: 8vw;
+    min-height: 50px;
+    min-width:  50px;
+    border: 1px solid black;
+    background-color: #FFCD00;
+}
