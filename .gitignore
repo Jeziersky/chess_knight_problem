@@ -114,4 +114,4 @@ ENV/
 ### VisualStudioCode ###
 .vscode/*
 
-local_settings.py
+tak.py
