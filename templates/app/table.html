@@ -11,15 +11,21 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-{% csrf_token %}
-<table>
-    {% for i in board %}
-       <tr>
-            {% for j in i %}
+<div class="header">
+    <h1>Problem solved ;)</h1>
+</div>
+<div class="content">
+    <h3>Red is your start position</h3>
+    <table class="table-solution">
+        {% for i in board %}
+            <tr>
+                {% for j in i %}
                     <td>{{ j }}</td>
-            {% endfor %}
-       </tr>
-    {% endfor %}
-</table>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+<script src="{% static 'app/main.js' %}"></script>
 </body>
 </html>

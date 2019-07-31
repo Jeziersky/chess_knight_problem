@@ -6,29 +6,37 @@
     <title>Chess knight problem</title>
     <link rel="stylesheet" type="text/css" href="{% static 'app/main.css' %}"/>
     <script
-			  src="https://code.jquery.com/jquery-3.4.1.min.js"
-			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-			  crossorigin="anonymous"></script>
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
 </head>
 <body>
-<form method="post">
-    {% csrf_token %}
-    {% for i in range %}
-        <div>
-            {% for j in range %}
-                <div class="one_place">
-                    <label>
-                        <input type="radio" name="place" value="{{ i }}{{ j }}"/>
-                    </label>
-                </div>
-            {% endfor %}
-        </div>
-    {% endfor %}
+<div class="header">
+    <h1>App for chess knight problem</h1>
+</div>
+<div class="content">
+    <h3>Choose start position:</h3>
+    <div class="start-form">
+        <form method="post">
+            <table>
+                {% csrf_token %}
+                {% for i in range %}
+                    <tr>
+                        {% for j in range %}
+                            <td>
+                                <input type="radio" name="place" id="{{ i }}{{ j }}" value="{{ i }}{{ j }}"/>
+                                <label for="{{ i }}{{ j }}"></label>
+                            </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+            <div>
+                <input type="submit" value="next"/>
+            </div>
 
-    <div>
-        <input type="submit" value="next"/>
+        </form>
     </div>
-</form>
-<script src="{% static 'app/main.js' %}"></script>
+</div>
 </body>
 </html>

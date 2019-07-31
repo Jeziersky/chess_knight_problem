@@ -1,6 +1,3 @@
-var disabledFields = $(":radio").all.val();
-
-console.log(disabledFields);
-
-
-// $(":radio").attr("disabled", true);
+$(".table-solution tr td").filter(function(){
+    return $(this).text() === '1'
+}).css("background-color", "red");

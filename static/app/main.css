@@ -1,23 +1,75 @@
-.one_place {
-    display: inline-block;
-    width: 8vw;
-    height: 8vw;
-    min-height: 50px;
-    min-width:  50px;
-    border: 1px solid black;
-    background-color: #FFCD00;
+body {
+    background-color: wheat;
+    font-family: "Noto Mono";
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    line-height: 90px;
+    background-color: antiquewhite;
+    text-align: center;
+}
+
+.content {
+    text-align: center;
+    padding-top: 150px;
+    width: 100%;
+    background-color: wheat;
+}
+
+.start-form {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 table {
-  border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
 }
 
 table, th, td {
-  border: 1px solid black;
+    border: 1px solid black;
 }
 
 td {
-    width: 50px;
-    height: 50px;
+
+    width: 6vw;
+    height: 6vw;
+    min-width: 50px;
+    min-height: 50px;
     text-align: center;
+    background-color: antiquewhite;
+}
+
+input[type="submit"],
+input[type="submit"]:active,
+input[type="submit"]:focus {
+    margin-top: 10px;
+    background: transparent;
+    color: black;
+    font-size: 18px;
+    border: 7px solid antiquewhite;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+input[type=radio] + label:before {
+    content: "";
+    display: inline-block;
+    width: 5vw;
+    height: 5vw;
+    vertical-align: middle;
+    background-color: antiquewhite;
+}
+
+input[type=radio]:checked + label:before {
+    background-color: wheat;
+    font-size: 1.8em;
+    text-align: center;
+    text-shadow: 0px 0px 3px #eee;
 }
