@@ -5,7 +5,6 @@ venv/
 node_modules
 package-lock.json
 project
-migrations/
 *.pyc
 *.pyo
 env/
