@@ -4,7 +4,7 @@ It's application for chess knight problem.
 
 You can choose start place and app will show how you can move your figure to fill the whole board.
 
-========================================================================================================
+=====================================================================================================
 
 PL
 
