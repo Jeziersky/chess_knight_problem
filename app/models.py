@@ -16,3 +16,6 @@ class Field(models.Model):
     position_x = models.IntegerField()
     position_y = models.IntegerField()
     value = models.IntegerField()
+
+    class Meta:
+        ordering = ['board', 'value']
