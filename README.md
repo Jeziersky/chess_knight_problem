@@ -6,8 +6,7 @@ You can choose start place and app will show how you can move your figure to fil
 
 *INSTALL*
 
-1) Install requirements by command:
-    pip install -r requirements.txt
+1) Install requirements by command "pip install -r requirements.txt"
     
 2) Make sure you have database, which name is the same as in settings
 
@@ -26,7 +25,7 @@ You can choose start place and app will show how you can move your figure to fil
 
 3) Run "python manage.py migrate"
 
-4) Run "python manage.py tests"
+4) Run "python manage.py test"
 
 ===============================================================================================
 

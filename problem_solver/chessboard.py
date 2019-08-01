@@ -37,7 +37,7 @@ class KnightFigure(ChessFigure):
 
     def move(self, x, y):
         """ Make all possible moves for knight"""
-        if self.counter == 25:
+        if self.counter == (SIZE_OF_BOARD.max + 1) * (SIZE_OF_BOARD.max + 1):
             return True
         for jump in self.figure_moves:
             after_x, after_y = x + jump[0], y + jump[1]
