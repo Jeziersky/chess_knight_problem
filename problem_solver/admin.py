@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from problem_solver.models import Field, Board
+
+admin.site.register(Field)
+admin.site.register(Board)

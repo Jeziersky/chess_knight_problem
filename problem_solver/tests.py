@@ -1,6 +1,7 @@
 from django.test import TestCase
+# django.test.client
 
-from problem_solver.chessboard import check_move, make_board
+from problem_solver.chessboard import KnightFigure, make_board
 
 counter, board = make_board(0, 0)
 
@@ -42,6 +43,6 @@ class MakeBoardTest(TestCase):
     def test_five_to_hundred(self):
         for i in range(5, 101):
             for j in range(5, 101):
-                self.assertEqual(
+                self.assertRaises(
                     make_board(i, j), ValueError
                 )

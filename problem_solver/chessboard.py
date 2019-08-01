@@ -58,4 +58,4 @@ def make_board(start_x=0, start_y=0):
         board[start_x][start_y] = 1
         return board
     else:
-        return ValueError
+        raise ValueError
