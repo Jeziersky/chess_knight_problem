@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from app.chessboard import check_move, make_board
+from problem_solver.chessboard import check_move, make_board
 
 counter, board = make_board(0, 0)
 

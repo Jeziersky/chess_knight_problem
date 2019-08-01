@@ -17,7 +17,6 @@ def check_move(x, y, board):
 
 def move(x, y, counter, board):
     """ Make all posible moves for knight"""
-    print(counter)
     if counter == 25:
         return True
     jumps = ((-2, 1), (-1, 2), (1, 2), (2, 1),
@@ -29,4 +28,3 @@ def move(x, y, counter, board):
             counter += 1
             board[after_x][after_y] = counter
             move(after_x, after_y, counter, board)
-            print("||" + str(counter) + "||")
