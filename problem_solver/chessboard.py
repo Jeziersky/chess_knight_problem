@@ -1,7 +1,7 @@
 from collections import namedtuple
 
-Board = namedtuple('Board', 'min max')
-SIZE_OF_BOARD = Board(0, 4)
+BoardTpl = namedtuple('BoardTpl', 'min max')
+SIZE_OF_BOARD = BoardTpl(0, 4)
 
 
 class ChessFigure:
