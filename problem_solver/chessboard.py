@@ -28,33 +28,39 @@ class ChessFigure:
 
 class KnightFigure(ChessFigure):
     """ Class representing knight figure """
+
     def __init__(self, board):
         figure_moves = ((-2, 1), (-1, 2), (1, 2), (2, 1),
-             (2, -1), (1, -2), (-1, -2), (-2, -1))
+                        (2, -1), (1, -2), (-1, -2), (-2, -1))
         self.counter = 1
         super().__init__("Knight", figure_moves, board)
 
     def move(self, x, y):
-        """ Make all posible moves for knight"""
+        """ Make all possible moves for knight"""
         if self.counter == 25:
             return True
         for jump in self.figure_moves:
-            after_x = x + jump[0]
-            after_y = y + jump[1]
+            after_x, after_y = x + jump[0], y + jump[1]
             if self.check_move(after_x, after_y):  # Move knight if true
                 self.counter += 1
                 self.board[after_x][after_y] = self.counter
-                self.move(after_x, after_y)
+                if not self.move(after_x, after_y):
+                    self.board[after_x][after_y] = 0
+                    self.counter -= 1
+                else:
+                    return True
+        return False
 
     def check_move(self, x, y):
         """ Check move correctness """
-        return SIZE_OF_BOARD.min <= x <= SIZE_OF_BOARD.max and SIZE_OF_BOARD.min <= y <= SIZE_OF_BOARD.max and self.board[x][y] == 0
+        return SIZE_OF_BOARD.min <= x <= SIZE_OF_BOARD.max and SIZE_OF_BOARD.min <= y <= SIZE_OF_BOARD.max and \
+               self.board[x][y] == 0
 
 
 def make_board(start_x=0, start_y=0):
     """ Create game board """
     if SIZE_OF_BOARD.min <= start_x <= SIZE_OF_BOARD.max and SIZE_OF_BOARD.min <= start_y <= SIZE_OF_BOARD.max:
-        board = [5*[0] for i in range(SIZE_OF_BOARD.min, SIZE_OF_BOARD.max+1)]
+        board = [5 * [0] for i in range(SIZE_OF_BOARD.min, SIZE_OF_BOARD.max + 1)]
         board[start_x][start_y] = 1
         return board
     else:
