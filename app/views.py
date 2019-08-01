@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 
-from app.function import move, make_board
+from app.chessboard import move, make_board
 from app.models import Knight, Board, Field
 
 
