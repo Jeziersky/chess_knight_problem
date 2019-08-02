@@ -53,8 +53,7 @@ class KnightFigure(ChessFigure):
 
     def check_move(self, x, y):
         """ Check move correctness """
-        return SIZE_OF_BOARD.min <= x <= SIZE_OF_BOARD.max and SIZE_OF_BOARD.min <= y <= SIZE_OF_BOARD.max and \
-               self.board[x][y] == 0
+        return SIZE_OF_BOARD.min <= x <= SIZE_OF_BOARD.max and SIZE_OF_BOARD.min <= y <= SIZE_OF_BOARD.max and self.board[x][y] == 0
 
 
 def make_board(start_x=0, start_y=0):

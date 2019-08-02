@@ -3,28 +3,32 @@ from django.test import TestCase
 
 from problem_solver.chessboard import KnightFigure, make_board
 
-board = make_board(0, 0)
-knight_figure = KnightFigure(board)
-
 
 class CheckMoveTest(TestCase):
+    def setUp(self):
+        self.board = make_board(0, 0)
+        self.knight_figure = KnightFigure(self.board)
+
+    def tearDown(self):
+        del self.board, self.knight_figure
+
     def test_one_to_four(self):
         for i in range(1, 4):
             for j in range(1, 4):
                 self.assertEqual(
-                    knight_figure.check_move(i, j), True
+                    self.knight_figure.check_move(i, j), True
                 )
 
     def test_zero_zero(self):
         self.assertEqual(
-            knight_figure.check_move(0, 0), False
+            self.knight_figure.check_move(0, 0), False
         )
 
     def test_five_to_hundred(self):
         for i in range(5, 100):
             for j in range(5, 100):
                 self.assertEqual(
-                    knight_figure.check_move(i, j), False
+                    self.knight_figure.check_move(i, j), False
                 )
 
 
@@ -43,16 +47,23 @@ class MakeBoardTest(TestCase):
 
 
 class MoveTest(TestCase):
+    def setUp(self):
+        self.board = make_board(0, 0)
+        self.knight_figure = KnightFigure(self.board)
+
+    def tearDown(self):
+        del self.board, self.knight_figure
+
     def test_move_zero_to_four(self):
         for i in range(0, 5):
             for j in range(0, 5):
                 self.assertEqual(
-                    knight_figure.move(i, j), True
+                    self.knight_figure.move(i, j), True
                 )
 
     def test_move_ten_to_hundred(self):
         for i in range(10, 101):
             for j in range(10, 101):
                 self.assertEqual(
-                    knight_figure.move(i, j), False
+                    self.knight_figure.move(i, j), False
                 )
