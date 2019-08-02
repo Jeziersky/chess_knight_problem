@@ -15,5 +15,6 @@ class LandingPageView(View):
         """ POST request handler """
         place = tuple(request.POST.get('place'))
         knight_figure_service = KnightFigureService(place)
-        board = knight_figure_service.execute()
-        return render(request, 'app/table.html', context={'board': board})
+        board, message = knight_figure_service.execute()
+        return render(request, 'app/table.html', context={'board': board,
+                                                          'message': message})

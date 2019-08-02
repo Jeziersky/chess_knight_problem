@@ -2,6 +2,7 @@ from django.test import TestCase
 # django.test.client
 
 from problem_solver.chessboard import KnightFigure, make_board
+from problem_solver.service import KnightFigureService
 
 
 class CheckMoveTest(TestCase):
@@ -67,3 +68,18 @@ class MoveTest(TestCase):
                 self.assertEqual(
                     self.knight_figure.move(i, j), False
                 )
+
+
+class ServiceTest(TestCase):
+    def setUp(self):
+        self.knight_figure_service = KnightFigureService(('1', '1'))
+
+    def tearDown(self):
+        del self.knight_figure_service
+
+    def test_service_two_two(self):
+        self.assertEqual(
+            self.knight_figure_service.execute(),
+            ([[25, 16, 7, 2, 19], [6, 1, 18, 15, 8], [17, 24, 11, 20, 3], [12, 5, 22, 9, 14], [23, 10, 13, 4, 21]],
+             'Problem solved ;)')
+        )

@@ -17,4 +17,8 @@ class KnightFigureService:
             for j in range(SIZE_OF_BOARD.max + 1):
                 value = board[i][j]
                 Field.objects.create(board=obj_board, position_x=i, position_y=j, value=value)
-        return board
+        if any(0 in field for field in board):
+            message = 'Problem can not be solved :C'
+        else:
+            message = 'Problem solved ;)'
+        return board, message
